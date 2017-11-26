@@ -22,3 +22,8 @@ try to add some html css content to make it look pleasant if you can
 
 
 
+basic look of these pages is given on 
+
+https://devpost.com/software/career-companion
+
+
