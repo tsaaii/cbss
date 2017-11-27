@@ -100,6 +100,7 @@ dev.menuwrap{
 }
 </style>
 <body>
-Teacher is a job require patient, knowledge and love, although it bear huge responsiblity. It provide a rare opportunity to teach the young ones.
+Teacher is a job require patient, knowledge and love, although it bear huge responsibility. It provide a rare opportunity to teach the young ones.
+
 </body>
 </html>
