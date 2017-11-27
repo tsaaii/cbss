@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 create a database ccc and create  a table with name members in it.
 
 mysql> use ccc
@@ -170,3 +178,22 @@ mysql> select *from members;
 +----+------------+-----------+----------------------+-----------------+----------+------------+---------+------+---------------+------+---------+-----------+---------------+
 9 rows in set (0.00 sec)
 
+ CREATE TABLE `members` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(45) NOT NULL,
+  `last_name` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `uname` varchar(45) NOT NULL,
+  `pass` varchar(45) NOT NULL,
+  `regdate` date NOT NULL,
+  `role` varchar(20) NOT NULL,
+  `math` int(10) DEFAULT NULL,
+  `socialscience` int(10) DEFAULT NULL,
+  `art` int(10) DEFAULT NULL,
+  `science` int(10) DEFAULT NULL,
+  `religious` int(10) DEFAULT NULL,
+  `mentorsubject` varchar(20) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1 |
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.05 sec)
