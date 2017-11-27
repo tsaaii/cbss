@@ -1,0 +1,172 @@
+create a database ccc and create  a table with name members in it.
+
+mysql> use ccc
+Database changed
+mysql> show tables
+    -> ;
++---------------+
+| Tables_in_ccc |
++---------------+
+| members       |
++---------------+
+1 row in set (0.04 sec)
+
+
+mysql> open members;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'open members' at line 1
+mysql> show tables;
++---------------+
+| Tables_in_ccc |
++---------------+
+| members       |
++---------------+
+1 row in set (0.00 sec)
+
+Insert the following column names using insert into command. Please take care of all the attribute names and their sizes.
+
+mysql> show columns;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> describe ccc;
+ERROR 1146 (42S02): Table 'ccc.ccc' doesn't exist
+mysql> describe members;
++---------------+------------------+------+-----+---------+----------------+
+| Field         | Type             | Null | Key | Default | Extra          |
++---------------+------------------+------+-----+---------+----------------+
+| id            | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| first_name    | varchar(45)      | NO   |     | NULL    |                |
+| last_name     | varchar(45)      | NO   |     | NULL    |                |
+| email         | varchar(45)      | NO   |     | NULL    |                |
+| uname         | varchar(45)      | NO   |     | NULL    |                |
+| pass          | varchar(45)      | NO   |     | NULL    |                |
+| regdate       | date             | NO   |     | NULL    |                |
+| role          | varchar(20)      | NO   |     | NULL    |                |
+| math          | int(10)          | YES  |     | NULL    |                |
+| socialscience | int(10)          | YES  |     | NULL    |                |
+| art           | int(10)          | YES  |     | NULL    |                |
+| science       | int(10)          | YES  |     | NULL    |                |
+| religious     | int(10)          | YES  |     | NULL    |                |
+| mentorsubject | varchar(20)      | NO   |     | NULL    |                |
++---------------+------------------+------+-----+---------+----------------+
+14 rows in set (0.00 sec)
+
+mysql> alter column mentorsubject;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column mentorsubject' at line 1
+mysql> ALTER TABLE ccc. MODIFY COLUMN mentorsubject notnull;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COLUMN mentorsubject notnull' at line 1
+mysql> ALTER TABLE ccc. MODIFY COLUMN mentorsubject not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COLUMN mentorsubject not null' at line 1
+mysql> use ccc
+Database changed
+mysql> ALTER TABLE ccc. MODIFY COLUMN mentorsubject varchar(20) default null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COLUMN mentorsubject varchar(20) default null' at line 1
+mysql> ALTER TABLE ccc MODIFY COLUMN mentorsubject varchar(20) default null;
+ERROR 1146 (42S02): Table 'ccc.ccc' doesn't exist
+mysql> ALTER TABLE members MODIFY COLUMN mentorsubject varchar(20) default null;
+Query OK, 0 rows affected (0.94 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe members;
++---------------+------------------+------+-----+---------+----------------+
+| Field         | Type             | Null | Key | Default | Extra          |
++---------------+------------------+------+-----+---------+----------------+
+| id            | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| first_name    | varchar(45)      | NO   |     | NULL    |                |
+| last_name     | varchar(45)      | NO   |     | NULL    |                |
+| email         | varchar(45)      | NO   |     | NULL    |                |
+| uname         | varchar(45)      | NO   |     | NULL    |                |
+| pass          | varchar(45)      | NO   |     | NULL    |                |
+| regdate       | date             | NO   |     | NULL    |                |
+| role          | varchar(20)      | NO   |     | NULL    |                |
+| math          | int(10)          | YES  |     | NULL    |                |
+| socialscience | int(10)          | YES  |     | NULL    |                |
+| art           | int(10)          | YES  |     | NULL    |                |
+| science       | int(10)          | YES  |     | NULL    |                |
+| religious     | int(10)          | YES  |     | NULL    |                |
+| mentorsubject | varchar(20)      | YES  |     | NULL    |                |
++---------------+------------------+------+-----+---------+----------------+
+14 rows in set (0.00 sec)
+
+
+
+
+mysql> describe members
+    -> ;
++---------------+------------------+------+-----+---------+----------------+
+| Field         | Type             | Null | Key | Default | Extra          |
++---------------+------------------+------+-----+---------+----------------+
+| id            | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| first_name    | varchar(45)      | NO   |     | NULL    |                |
+| last_name     | varchar(45)      | NO   |     | NULL    |                |
+| email         | varchar(45)      | NO   |     | NULL    |                |
+| uname         | varchar(45)      | NO   |     | NULL    |                |
+| pass          | varchar(45)      | NO   |     | NULL    |                |
+| regdate       | date             | NO   |     | NULL    |                |
+| role          | varchar(20)      | NO   |     | NULL    |                |
+| math          | int(10)          | YES  |     | NULL    |                |
+| socialscience | int(10)          | YES  |     | NULL    |                |
+| art           | int(10)          | YES  |     | NULL    |                |
+| science       | int(10)          | YES  |     | NULL    |                |
+| religious     | int(10)          | YES  |     | NULL    |                |
+| mentorsubject | varchar(20)      | YES  |     | NULL    |                |
++---------------+------------------+------+-----+---------+----------------+
+14 rows in set (0.00 sec)
+
+
+
+mysql> describe members;
++---------------+------------------+------+-----+---------+----------------+
+| Field         | Type             | Null | Key | Default | Extra          |
++---------------+------------------+------+-----+---------+----------------+
+| id            | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| first_name    | varchar(45)      | NO   |     | NULL    |                |
+| last_name     | varchar(45)      | NO   |     | NULL    |                |
+| email         | varchar(45)      | NO   |     | NULL    |                |
+| uname         | varchar(45)      | NO   |     | NULL    |                |
+| pass          | varchar(45)      | NO   |     | NULL    |                |
+| regdate       | date             | NO   |     | NULL    |                |
+| role          | varchar(20)      | NO   |     | NULL    |                |
+| math          | int(10)          | YES  |     | NULL    |                |
+| socialscience | int(10)          | YES  |     | NULL    |                |
+| art           | int(10)          | YES  |     | NULL    |                |
+| science       | int(10)          | YES  |     | NULL    |                |
+| religious     | int(10)          | YES  |     | NULL    |                |
++---------------+------------------+------+-----+---------+----------------+
+13 rows in set (0.00 sec)
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= student' at line 1
+mysql> insert into members (id,first_name,last_name,email,uname,pass,regdate,role,math,socialscience,art,science,reigious,mentorsubject) values (01,shubham,koundinya,ss@kk.ca,sk1,sk123,0,student,100,90,88,78,45,58,55,0);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@kk.ca,sk1,sk123,0,student,100,90,88,78,45,58,55,0)' at line 1
+mysql> insert into members (id,first_name,last_name,email,uname,pass,regdate,role,math,socialscience,art,science,reigious,mentorsubject) values (01,shubham,koundinya,ss@kk.ca,sk1,sk123,0,student,100,90,88,78,45,58,55);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@kk.ca,sk1,sk123,0,student,100,90,88,78,45,58,55)' at line 1
+mysql> insert into members (id,first_name,last_name,email,uname,pass,regdate,role,math,socialscience,art,science,reigious,mentorsubject) values (01,shubham,koundinya,ss,sk1,sk123,0,student,100,90,88,78,45,58,55);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into members (id,first_name,last_name,email,uname,pass,regdate,role,math,socialscience,art,science,reigious,mentorsubject) values (01,shubham,koundinya,ss,sk1,sk123,0,student,100,90,88,78,45,58);
+ERROR 1054 (42S22): Unknown column 'reigious' in 'field list'
+mysql> insert into members (id,first_name,last_name,email,uname,pass,regdate,role,math,socialscience,art,science,religious,mentorsubject) values (01,shubham,koundinya,ss,sk1,sk123,0,student,100,90,88,78,45,58);
+ERROR 1054 (42S22): Unknown column 'shubham' in 'field list'
+mysql> select *from members;
++----+------------+-----------+-----------------------+-------+-----------+------------+---------+------+---------------+------+---------+-----------+---------------+
+| id | first_name | last_name | email                 | uname | pass      | regdate    | role    | math | socialscience | art  | science | religious | mentorsubject |
++----+------------+-----------+-----------------------+-------+-----------+------------+---------+------+---------------+------+---------+-----------+---------------+
+|  1 | abishek    | thapli    | athapliy@uwaterloo.ca | ashek | abhishek1 | 2017-11-13 | student |  100 |            55 |   54 |      63 |        84 | 0             |
+|  2 | null       | null      | null                  | null  | null      | 2017-11-25 | null    | NULL |          NULL | NULL |    NULL |      NULL | 0             |
+|  3 | null       | null      | null                  | null  | null      | 2017-11-25 | null    | NULL |          NULL | NULL |    NULL |      NULL | 0             |
+|  4 | ss         | ss        | ss                    | ss    | ss        | 2017-11-25 | student | NULL |          NULL | NULL |    NULL |      NULL | 0             |
++----+------------+-----------+-----------------------+-------+-----------+------------+---------+------+---------------+------+---------+-----------+---------------+
+4 rows in set (0.00 sec)
+
++----+------------+-----------+----------------------+-----------------+----------+------------+---------+------+---------------+------+---------+-----------+---------------+
+| id | first_name | last_name | email                | uname           | pass     | regdate    | role    | math | socialscience | art  | science | religious | mentorsubject |
++----+------------+-----------+----------------------+-----------------+----------+------------+---------+------+---------------+------+---------+-----------+---------------+
+|  2 | sanket     | vaibhav   | sv8@gmail.com        | svaibhav        | sanket1  | 2017-10-13 | student |   55 |           100 |   78 |      87 |        66 | 0             |
+|  3 | mansukh    | singh     | manu@gmail.com       | mseerha         | mansukh1 | 2017-09-13 | student |   55 |            54 |  100 |      99 |        88 | 0             |
+|  4 | hakam      | singh     | hsingh233@gmail.com  | hsingh          | hakam1   | 2017-08-13 | student |   55 |            54 |   78 |     100 |        87 | 0             |
+|  5 | Shubham    | koundinya | skoundinya@gmail.com | skoundinya      | shubham1 | 2017-07-13 | student |   55 |            54 |   78 |      87 |       100 | 0             |
+|  6 | Enlil      | Tom       | etom@gmail.com       | etom            | enlil1   | 2017-05-13 | mentor  |  100 |            89 |   87 |      86 |        84 | 82            |
+|  7 | kajan      | surendran | ksuren@yahoo.com     | ksuren          | kajan1   | 2017-02-13 | mentor  |   89 |           100 |   98 |      97 |        96 | 95            |
+|  8 | tommy      | nguyen    | tnguyen              | tommy@gmail.com | tommy1   | 2016-05-24 | mentor  |   89 |            88 |  100 |      87 |        86 | 85            |
+|  9 | donald     | trump     | donald@uwaterloo.ca  | donald          | donald1  | 2016-05-08 | mentor  |   85 |            84 |   83 |     100 |        82 | 0             |
+| 10 | Ivanka     | trump     | ivanka@laurier.ca    | ivanka1         | ivanka1  | 2016-07-30 | mentor  |   81 |            80 |   79 |      78 |       100 | 0             |
++----+------------+-----------+----------------------+-----------------+----------+------------+---------+------+---------------+------+---------+-----------+---------------+
+9 rows in set (0.00 sec)
+
